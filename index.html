@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f7f5">
+<title>Dheosign — DKV Portfolio</title>
+<style>
+:root {
+  --bg: #f7f7f5;
+  --ink: #20211f;
+  --muted: #777970;
+  --line: #e4e4df;
+  --blue: #2639a8;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { width: 90%; max-width: 1080px; margin: auto; }
+header {
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  gap: 16px;
+}
+.brand { font-weight: 800; letter-spacing: -.5px; }
+.brand span { color: var(--blue); }
+nav { display: flex; gap: 18px; font-size: 12px; }
+nav a:hover { color: var(--blue); }
+.hero { padding: 76px 0 64px; }
+.eyebrow {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: bold;
+}
+h1 {
+  font-size: clamp(48px, 11vw, 100px);
+  letter-spacing: -5px;
+  line-height: .95;
+  margin: 20px 0;
+}
+h1 span { color: var(--blue); }
+.intro { max-width: 450px; color: var(--muted); font-size: 14px; }
+.section { padding: 30px 0 70px; }
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+h2 { font-size: 27px; letter-spacing: -1px; margin: 0; }
+.small { color: var(--muted); font-size: 11px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+.filter {
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 9px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.filter.active, .filter:hover { background: var(--ink); color: white; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 16px;
+}
+.project[hidden] { display: none; }
+.art {
+  aspect-ratio: 4 / 5;
+  background: #e9e9e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.art img { width: 100%; height: 100%; object-fit: cover; }
+.placeholder { text-align: center; color: #777970; font-size: 12px; padding: 12px; }
+.placeholder b { display: block; font-size: 36px; color: #c1c3bc; }
+.project h3 { font-size: 13px; margin: 12px 0 3px; }
+.project p { color: var(--muted); font-size: 11px; margin: 0; }
+.about {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 42px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.about p { color: var(--muted); font-size: 14px; max-width: 460px; }
+.tags { display: flex; align-content: start; flex-wrap: wrap; gap: 8px; }
+.tag { border: 1px solid var(--line); padding: 8px 12px; border-radius: 30px; font-size: 11px; }
+.contact { padding: 70px 0; }
+.contact h2 { font-size: clamp(32px, 7vw, 55px); max-width: 600px; margin: 12px 0; line-height: 1.1; }
+.contact p { color: var(--muted); font-size: 13px; }
+.button {
+  display: inline-block;
+  background: var(--ink);
+  color: white;
+  padding: 12px 17px;
+  font-size: 12px;
+  margin: 10px 8px 0 0;
+  border-radius: 3px;
+}
+.button.outline { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+@media(max-width:650px) {
+  .hero { padding: 55px 0 45px; }
+  h1 { letter-spacing: -3px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 12px; }
+  .about { grid-template-columns: 1fr; }
+  nav { gap: 10px; }
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <a class="brand" href="#">DHEO<span>SIGN.</span></a>
+  <nav>
+    <a href="#works">Karya</a>
+    <a href="#about">Tentang</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="eyebrow">Visual Design / Portfolio</div>
+    <h1>Selected<br>Works<span>.</span></h1>
+    <p class="intro">
+      Kumpulan karya dan eksplorasi visual dalam perjalanan
+      saya mempelajari Desain Komunikasi Visual.
+      Dari poster dan infografis hingga fotografi objek
+      dan eksperimen desain.
+    </p>
+  </section>
+
+  <section class="section wrap" id="works">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <span class="small" id="count">06 karya</span>
+    </div>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">Semua</button>
+      <button class="filter" data-filter="poster">Poster</button>
+      <button class="filter" data-filter="infografis">Infografis</button>
+      <button class="filter" data-filter="fotografi">Fotografi</button>
+      <button class="filter" data-filter="ilustrasi">Ilustrasi</button>
+      <button class="filter" data-filter="sekolah">Sekolah</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <article class="project" data-category="poster">
+        <div class="art"><div class="placeholder"><b>01</b>Poster Design</div></div>
+        <h3>Poster Eksplorasi</h3>
+        <p>Poster / 2026</p>
+      </article>
+
+      <article class="project" data-category="infografis">
+        <div class="art"><div class="placeholder"><b>02</b>Infographic</div></div>
+        <h3>Informasi Visual</h3>
+        <p>Infografis / 2026</p>
+      </article>
+
+      <article class="project" data-category="fotografi">
+        <div class="art"><div class="placeholder"><b>03</b>Photography</div></div>
+        <h3>Everyday Objects</h3>
+        <p>Fotografi / 2026</p>
+      </article>
+
+      <article class="project" data-category="ilustrasi">
+        <div class="art"><div class="placeholder"><b>04</b>Illustration</div></div>
+        <h3>Visual Study</h3>
+        <p>Ilustrasi / 2026</p>
+      </article>
+
+      <article class="project" data-category="sekolah">
+        <div class="art"><div class="placeholder"><b>05</b>School Project</div></div>
+        <h3>Proyek Pembelajaran</h3>
+        <p>Tugas sekolah / 2026</p>
+      </article>
+
+      <article class="project" data-category="poster">
+        <div class="art"><div class="placeholder"><b>06</b>Experiment</div></div>
+        <h3>Eksperimen Komposisi</h3>
+        <p>Desain visual / 2026</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about wrap" id="about">
+    <div>
+      <div class="eyebrow">About Me</div>
+      <h2>Belajar dan bereksplorasi.</h2>
+      <p>
+        Saya merupakan siswa Desain Komunikasi Visual
+        yang tertarik pada desain poster, infografis,
+        fotografi objek, dan pengembangan komposisi visual.
+        Website ini menjadi ruang dokumentasi karya
+        serta perkembangan kreativitas saya.
+      </p>
+    </div>
+    <div class="tags">
+      <span class="tag">Graphic Design</span>
+      <span class="tag">Poster</span>
+      <span class="tag">Infographics</span>
+      <span class="tag">Photography</span>
+      <span class="tag">Illustration</span>
+      <span class="tag">Visual Experiment</span>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="contact">
+    <div class="eyebrow">Find Me Online</div>
+    <h2>Terima kasih sudah berkunjung.</h2>
+    <p>Lihat pembaruan karya saya melalui Instagram.</p>
+    <!-- Ganti URL di bawah dengan link Instagram kamu -->
+    <a class="button" href="https://instagram.com/"
+       target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    <a class="button outline" href="#works">Lihat Karya</a>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 DHEOSIGN</span>
+  <span>Made with curiosity.</span>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll(".project");
+const count = document.getElementById("count");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+
+    let total = 0;
+    projects.forEach(project => {
+      const show = button.dataset.filter === "all" ||
+        project.dataset.category === button.dataset.filter;
+      project.hidden = !show;
+      if (show) total++;
+    });
+    count.textContent = total + " karya";
+  });
+});
+</script>
+
+</body>
+</html>
